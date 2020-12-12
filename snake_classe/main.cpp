@@ -8,9 +8,7 @@
 
 int main(){
     game game;
-    const int nx = 50;
-    const int ny = 25;
     const int lap = 100;
-    game.setupGame(nx,ny,lap);
+    game.setupGame(lap);
     return 0;
 }

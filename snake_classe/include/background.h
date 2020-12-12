@@ -1,10 +1,14 @@
 #pragma once
+#include "../include/game.h"
 
 
 class background{
     public:
-        int *bg;
+        static const int nx = 50;
+        static const int ny = 25;
+        int bg[nx*ny];
         void backgroundClear();
-        void backgroundSetup(const int nx,const int ny);
-        void printFrame(const int& nx, const int& ny, int snl);
+        void backgroundSetup();
+        void printFrame(int snl);
+      
 };
