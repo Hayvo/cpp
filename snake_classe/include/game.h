@@ -2,9 +2,11 @@
 #include "../include/snake.h"
 #include "../include/background.h"
 class game{
-    public:
+    private:
         const int lap = 100;
-        void setupGame(const int lap);
+    public:
+        int getLap();
+        void setupGame();
 };
 
 

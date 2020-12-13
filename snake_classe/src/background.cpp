@@ -5,6 +5,17 @@
 
 const char* cmd_clear="clear";
 
+int background::getNx(){
+    return nx;
+}
+
+int background::getNy(){
+    return ny;
+}
+
+int* background::getBg(){
+    return bg;
+}
 
 void background::backgroundClear(){ /* Effacer tout l'écran */
     int out = system(cmd_clear);
@@ -23,6 +34,12 @@ void background::printFrame(int snl){ /* Affichage jeu */
             else if( bg[i+j*nx] == 2 ){
                 std::cout << "@" ; 
             }    
+            else if( bg[i+j*nx] == 3 ){
+                std::cout << "8" ; 
+            }
+            else if( bg[i+j*nx] == 4 ){
+                std::cout << "O" ; 
+            }
             else{
                 std::cout << " ";
             }

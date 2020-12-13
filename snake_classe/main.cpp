@@ -7,8 +7,8 @@
 #include "./src/snake.cpp"
 
 int main(){
+    srand(time(NULL));
     game game;
-    const int lap = 100;
-    game.setupGame(lap);
+    game.setupGame();
     return 0;
 }

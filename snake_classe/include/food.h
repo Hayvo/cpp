@@ -1,13 +1,16 @@
 #pragma once 
-#include "/home/hayvo/snake_classe/include/snake.h"
-#include "/home/hayvo/snake_classe/include/background.h"
+#include "../include/snake.h"
+#include "../include/background.h"
 
 
 class food{
-    public:
+    private:
         int food[2];
+    public:
+        int* getFood();
         void createFood(background &bg);
         void displayFood(background &bg);
         bool eatFood(snake &snake);
 };
+
 

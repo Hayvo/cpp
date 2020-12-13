@@ -12,8 +12,11 @@
 #include "../include/food.h"
 
 
+int game::getLap(){
+    return lap;
+}
 
-void game::setupGame(const int lap){
+void game::setupGame(){
     srand(time(NULL));
     
     background background;
@@ -21,7 +24,7 @@ void game::setupGame(const int lap){
     
     snake snake;
     snake.setupSnake(background);
-    background.printFrame(snake.snl);
+    background.printFrame(snake.getSnl());
     
     
     
@@ -38,7 +41,7 @@ void game::setupGame(const int lap){
         }
         background.backgroundClear(); /* MAJ plateau de jeu */
         snake.add_snake(background);
-        background.printFrame(snake.snl);
+        background.printFrame(snake.getSnl());
         snake.remove_snake(background); 
 
         bool out1 = snake.verifyBorder(background);
