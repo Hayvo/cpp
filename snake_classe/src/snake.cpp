@@ -2,16 +2,16 @@
 #include "/home/hayvo/snake_classe/include/snake.h"
 #include "/home/hayvo/snake_classe/include/background.h"
 
-void snake::add_snake(background &bg,int nx, int ny){
+void snake::add_snake(background &bg){
         for(int i = 0; i < snl; i++){
-            bg.bg[Y[i]*nx + X[i]] = 1;
+            bg.bg[Y[i]*bg.nx + X[i]] = 1;
         } 
     };
 
 
-    void snake::remove_snake(background &bg,int nx, int ny){
+    void snake::remove_snake(background &bg){
         for(int i = 0; i < snl; i++){
-            bg.bg[Y[i]*nx + X[i]] = 0;
+            bg.bg[Y[i]*bg.nx + X[i]] = 0;
         }
     };
 
@@ -43,15 +43,15 @@ void snake::add_snake(background &bg,int nx, int ny){
         return false;
     }
 
-    bool snake::verifyBorder(int nx, int ny){
-        return X[0] < nx-1 && X[0] > 0 && Y[0] < ny-1 && Y[0] > 0;
+    bool snake::verifyBorder(background &bg){
+        return X[0] < bg.nx-1 && X[0] > 0 && Y[0] < bg.ny-1 && Y[0] > 0;
     };
 
-    void snake::setupSnake(int nx, int ny){
+    void snake::setupSnake(background &bg){
         snl = 5;
         for(int i = 0; i<snl;i++){
-            X[i] = nx/2;
-            Y[i] = ny/2 + i;
+            X[i] = bg.nx/2;
+            Y[i] = bg.ny/2 + i;
         }
     };
 

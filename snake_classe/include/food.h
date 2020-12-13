@@ -6,7 +6,8 @@
 class food{
     public:
         int food[2];
-        void createFood(background &bg, const int nx, const int ny);
+        void createFood(background &bg);
+        void displayFood(background &bg);
         bool eatFood(snake &snake);
 };
 

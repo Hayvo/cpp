@@ -12,17 +12,17 @@ class snake{
         
         int snl;
 
-        void add_snake(background &bg,int nx, int ny);
+        void add_snake(background &bg);
 
-        void remove_snake(background &bg,int nx, int ny);
+        void remove_snake(background &bg);
 
         void snake_movement(char key);
 
-        bool verifyBorder(int nx, int ny);
+        bool verifyBorder(background &bg);
 
         bool verifyOverlap();
 
-        void setupSnake(int nx, int ny);
+        void setupSnake(background &bg);
 
         void update_snake_coordinates();
 

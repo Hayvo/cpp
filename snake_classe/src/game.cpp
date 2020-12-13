@@ -18,10 +18,9 @@ void game::setupGame(const int lap){
     
     background background;
     background.backgroundSetup(); 
-    int nx = background.nx;
-    int ny = background.ny;
+    
     snake snake;
-    snake.setupSnake(nx,ny);
+    snake.setupSnake(background);
     background.printFrame(snake.snl);
     
     
@@ -29,19 +28,20 @@ void game::setupGame(const int lap){
 
     char key;
     food food;
-    food.createFood(background, nx, ny );
+    food.createFood(background);
     while( true ){
+        food.displayFood(background);
         internal::frameSleep(lap);
         if( internal::keyEvent() ){ /* Récupération direction */
             std::cin >> key; 
             snake.snake_movement(key);
         }
         background.backgroundClear(); /* MAJ plateau de jeu */
-        snake.add_snake(background, nx, ny );
+        snake.add_snake(background);
         background.printFrame(snake.snl);
-        snake.remove_snake(background,nx, ny); 
+        snake.remove_snake(background); 
 
-        bool out1 = snake.verifyBorder(nx, ny);
+        bool out1 = snake.verifyBorder(background);
         bool out2 = snake.verifyOverlap(); /* Check position */
         if( out1 == false){
             background.backgroundClear();
@@ -55,7 +55,7 @@ void game::setupGame(const int lap){
         }
         bool eat = food.eatFood(snake); /* Check food */
         if(eat){
-            food.createFood(background, nx, ny);
+            food.createFood(background);
             snake.bigger_snake();
         }
         else{
