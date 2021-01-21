@@ -3,7 +3,7 @@
 #include "../include/background.h"
 class game{
     private:
-        const int lap = 100;
+        const int lap = 50;
     public:
         int getLap();
         void setupGame();
