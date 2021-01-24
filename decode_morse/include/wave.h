@@ -13,7 +13,7 @@ public:
     ~wave(){};
 
 private:
-    int dot_duration = 50;
+    int dot_duration = 70;
     int dash_duration = 3*dot_duration;
     int intra_letter_duration = 2*dot_duration;
     int inter_letter_duration = 3*intra_letter_duration;

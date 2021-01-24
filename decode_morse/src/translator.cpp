@@ -107,18 +107,19 @@ string translator::translate_morse_to_alpha(string chain){
     while (i<n){
         string lettre_morse;
         string m(1,chain[i]);
-        if (m == " "){
-            alpha = alpha + " ";
-            i = i + 1;
-        }
-        else {        
-            while (m != " "){
+        if (m != " "){
+            while (m != " ")
+            {
                 lettre_morse = lettre_morse + m;
                 i = i + 1;
                 m = chain[i];
             }
             lettre_morse = lettre_morse + m;
             i = i+1;
+        }
+        else {        
+            alpha = alpha + " ";
+            i = i + 1;
         }
         alpha = alpha + morse_to_alpha[lettre_morse];
     }
